@@ -1,7 +1,7 @@
 defmodule FarmbotOS.MixProject do
   use Mix.Project
 
-  @all_targets [:rpi3, :rpi]
+  @all_targets [:rpi4, :rpi3, :rpi]
   @version Path.join([__DIR__, "..", "VERSION"])
            |> File.read!()
            |> String.trim()
@@ -107,6 +107,11 @@ defmodule FarmbotOS.MixProject do
        tag: "v1.13.0-farmbot.1",
        runtime: false,
        targets: :rpi3},
+      {:farmbot_system_rpi4,
+       git: "https://github.com/nerves-project/nerves_system_rpi4.git",
+       tag: "v1.13.0",
+       runtime: false,
+       targets: :rpi4},
       {:farmbot_telemetry, path: "../farmbot_telemetry", env: Mix.env()},
       {:nerves, "~> 1.7", runtime: false},
       {:cors_plug, "~> 2.0.2"},
